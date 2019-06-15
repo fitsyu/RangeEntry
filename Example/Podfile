@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RangeEntry_Example' do
+  pod 'RangeEntry', :path => '../'
+
+  target 'RangeEntry_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
