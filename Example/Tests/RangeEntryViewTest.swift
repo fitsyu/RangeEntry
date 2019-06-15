@@ -21,7 +21,7 @@ class RangeEntryViewTest: XCTest {
             }
         }
 
-        priceRange = RangeEntry(start: 10, end: 20)
+        let priceRange = RangeEntry(start: 10, end: 20)
 
         let ui: RangeEntryView = RangeEntryViewDefault()
         ui.backing = priceRange
