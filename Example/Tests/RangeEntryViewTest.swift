@@ -23,16 +23,17 @@ class RangeEntryViewTest: XCTest {
 
         let priceRange = RangeEntry(start: 10, end: 20)
 
-        let ui: RangeEntryView = RangeEntryViewDefault()
+        var ui: RangeEntryView = RangeEntryViewDefault()
         ui.backing = priceRange
 
-        let uiDelegate: RangeEntryViewDelegate = ADelegate()
+        let aDelegate = ADelegate()
+        let uiDelegate: RangeEntryViewDelegate = aDelegate
         ui.delegate = uiDelegate
 
         // act
         ui.backing.start = 15
 
         // assert
-        XCTAssertTrue(uiDelegate.updated, "when delegate is set, it should get notified")
+        XCTAssertTrue(aDelegate.updated, "when delegate is set, it should get notified")
     }
 }

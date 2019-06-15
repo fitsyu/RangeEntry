@@ -1,8 +1,12 @@
 
 
-class RangeEntryViewDefault: RangeEntryView {
+public class RangeEntryViewDefault: RangeEntryView {
     
-    var backing: RangeEntry = RangeEntry()
+    public var backing: RangeEntry = RangeEntry()
     
-    var delegate: RangeEntryViewDelegate?
+    public var delegate: RangeEntryViewDelegate?
+    
+    public init() {
+        
+    }
 }
