@@ -42,11 +42,12 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7080D8993B98992E88A78DDC /* Pods-RangeEntry_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RangeEntry_Example.debug.xcconfig"; path = "Target Support Files/Pods-RangeEntry_Example/Pods-RangeEntry_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DA58A1C7CB3A6BA6DED02E39 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		DA58A1C7CB3A6BA6DED02E39 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E822D34922B4B02000E30BA7 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F0106835B91D80AA8ABEDE18 /* Pods_RangeEntry_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RangeEntry_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2F73D931651AAFFC0318F2B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F2F73D931651AAFFC0318F2B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F7C87006CB72A4AD791F0797 /* Pods-RangeEntry_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RangeEntry_Example.release.xcconfig"; path = "Target Support Files/Pods-RangeEntry_Example/Pods-RangeEntry_Example.release.xcconfig"; sourceTree = "<group>"; };
-		FFD92392B890CB761197A4C4 /* RangeEntry.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = RangeEntry.podspec; path = ../RangeEntry.podspec; sourceTree = "<group>"; };
+		FFD92392B890CB761197A4C4 /* RangeEntry.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RangeEntry.podspec; path = ../RangeEntry.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +73,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				E822D34922B4B02000E30BA7 /* MyPlayground.playground */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for RangeEntry */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -156,7 +158,6 @@
 				122E79CB47172210617CDD00 /* Pods-RangeEntry_Tests.debug.xcconfig */,
 				0C5047BE39C273E761E5B1C3 /* Pods-RangeEntry_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +228,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

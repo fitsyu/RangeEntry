@@ -1,0 +1,6 @@
+framework module Pods_RangeEntry_Example {
+  umbrella header "Pods-RangeEntry_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

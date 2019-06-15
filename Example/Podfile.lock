@@ -1,0 +1,16 @@
+PODS:
+  - RangeEntry (0.1.0)
+
+DEPENDENCIES:
+  - RangeEntry (from `../`)
+
+EXTERNAL SOURCES:
+  RangeEntry:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  RangeEntry: 05d16571cc3a523663eb51edc71179b85c12df6f
+
+PODFILE CHECKSUM: 4e7f2526b0fae6ba39adc5b65e68ac330fb7dc0e
+
+COCOAPODS: 1.7.1
