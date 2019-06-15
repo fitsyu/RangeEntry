@@ -15,6 +15,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* RangeEntryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* RangeEntryTest.swift */; };
+		E8689E7A22B4FED800570740 /* RangeEntryViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8689E7922B4FED800570740 /* RangeEntryViewTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		7080D8993B98992E88A78DDC /* Pods-RangeEntry_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RangeEntry_Example.debug.xcconfig"; path = "Target Support Files/Pods-RangeEntry_Example/Pods-RangeEntry_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DA58A1C7CB3A6BA6DED02E39 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E822D34922B4B02000E30BA7 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		E8689E7922B4FED800570740 /* RangeEntryViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeEntryViewTest.swift; sourceTree = "<group>"; };
 		F0106835B91D80AA8ABEDE18 /* Pods_RangeEntry_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RangeEntry_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F73D931651AAFFC0318F2B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F7C87006CB72A4AD791F0797 /* Pods-RangeEntry_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RangeEntry_Example.release.xcconfig"; path = "Target Support Files/Pods-RangeEntry_Example/Pods-RangeEntry_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* RangeEntryTest.swift */,
+				E8689E7922B4FED800570740 /* RangeEntryViewTest.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -343,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACEC1AFB9204008FA782 /* RangeEntryTest.swift in Sources */,
+				E8689E7A22B4FED800570740 /* RangeEntryViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
