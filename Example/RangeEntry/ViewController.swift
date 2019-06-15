@@ -7,18 +7,41 @@
 //
 
 import UIKit
+import RangeEntry
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var priceRangeLabel: UILabel!
+    @IBOutlet weak var priceRangeEntryViewContainer: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        makeRangeEntry()
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+extension ViewController {
+    
+    func makeRangeEntry() {
+        
+        let prange = RangeEntry(start: 200, end: 40_000)
+        
+        let prangeView = RangeEntryViewDefault()
+        prangeView.frame = priceRangeEntryViewContainer.bounds
+        priceRangeEntryViewContainer.addSubview(prangeView)
+        
+        prangeView.backing = prange
+        prangeView.delegate = self
     }
+}
 
+extension ViewController: RangeEntryViewDelegate {
+    
+    func didUpdateRange(_ view: RangeEntryView, range: RangeEntry.Range) {
+        
+        let text = "min:\(range.start) max: \(range.end)"
+        priceRangeLabel.text = text
+    }
 }
 

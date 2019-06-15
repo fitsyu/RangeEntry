@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +20,36 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Range" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doz-no-rxb">
+                                <rect key="frame" x="8" y="206" width="359" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="359" placeholderIntrinsicHeight="138" translatesAutoresizingMaskIntoConstraints="NO" id="sTm-7d-h7c">
+                                <rect key="frame" x="8" y="36" width="359" height="138"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sTm-7d-h7c" secondAttribute="trailing" constant="8" id="5ic-0q-XJC"/>
+                            <constraint firstItem="sTm-7d-h7c" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="8" id="7vR-UX-qbL"/>
+                            <constraint firstItem="doz-no-rxb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="8" id="8aq-8k-tQR"/>
+                            <constraint firstItem="sTm-7d-h7c" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="16" id="KUj-Kf-OOF"/>
+                            <constraint firstItem="doz-no-rxb" firstAttribute="top" secondItem="sTm-7d-h7c" secondAttribute="bottom" constant="32" id="T5J-iW-U7p"/>
+                            <constraint firstAttribute="trailing" secondItem="doz-no-rxb" secondAttribute="trailing" constant="8" id="wwj-YP-1xn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="priceRangeEntryViewContainer" destination="sTm-7d-h7c" id="804-7x-Spm"/>
+                        <outlet property="priceRangeLabel" destination="doz-no-rxb" id="xBX-dW-WI4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
