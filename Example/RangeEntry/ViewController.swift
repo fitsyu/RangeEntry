@@ -25,7 +25,7 @@ extension ViewController {
     
     func makeRangeEntry() {
         
-        let prange = RangeEntry(start: 10, end: 100)
+        let prange = RangeEntry(start: 10, end: 40_000_000)
         
 //        let prangeView = RangeEntryViewDefault()
 //        prangeView.frame = priceRangeEntryViewContainer.bounds

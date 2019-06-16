@@ -48,7 +48,10 @@ public class RangeEntry {
     }
     
     private func checkStart() {
-        if start < 0 { state = .InvalidRange }
+        if start < 0 {
+            state = .InvalidRange
+            start = 0
+        }
         
         // the anti-pattern
         if start > end {
@@ -57,7 +60,10 @@ public class RangeEntry {
     }
     
     private func checkEnd() {
-        if end < 0 { state = .InvalidRange }
+        if end < 0 {
+            state = .InvalidRange
+            end = 0
+        }
         
         // the anti-pattern
         if end < start {

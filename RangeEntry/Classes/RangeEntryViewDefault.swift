@@ -1,6 +1,6 @@
 import UIKit
 
-//import MultiSlider
+import MultiSlider
 
 public class RangeEntryViewDefault: UIView, RangeEntryView {
     
@@ -14,7 +14,7 @@ public class RangeEntryViewDefault: UIView, RangeEntryView {
     
     public var backing: RangeEntry = RangeEntry() {
         didSet {
-//            setupSlider()
+            setupSlider()
             startTextField.text = String(backing.start)
             endTextField.text = String(backing.end)
         }
@@ -34,7 +34,7 @@ public class RangeEntryViewDefault: UIView, RangeEntryView {
         
         setupLabels()
         setupTextFields()
-//        setupSlider()
+        setupSlider()
     }
     
     private lazy var bundle: Bundle = {
@@ -69,7 +69,7 @@ public class RangeEntryViewDefault: UIView, RangeEntryView {
         endLabel.text   = endValueDisplayName
     }
     
-//    @IBOutlet weak var slider: MultiSlider!
+    @IBOutlet weak var slider: MultiSlider!
     
     private var activeTextField: UITextField?
     
@@ -93,32 +93,40 @@ public class RangeEntryViewDefault: UIView, RangeEntryView {
         }
     }
     
-//    func setupSlider() {
-//        slider.orientation = .horizontal
-//
-//        print(backing.start, backing.end)
-//        let start = CGFloat(backing.start)
-//        let end   = CGFloat(backing.end)
-//
-//        slider.minimumValue = start
-//        slider.maximumValue = end
-//        slider.value       = [start, end]
-//    }
+    func setupSlider() {
+        slider.orientation = .horizontal
+
+        print(backing.start, backing.end)
+        let start = CGFloat(backing.start)
+        let end   = CGFloat(backing.end)
+
+        slider.minimumValue = start
+        slider.maximumValue = end
+        slider.value       = [start, end]
+    }
     
-//    @IBAction func sliderValueChanged(_ sender: MultiSlider) {
-//        
-//        guard
-//            let startValue = sender.value.first,
-//            let endValue   = sender.value.last
-//            else {
-//                dump(sender.value)
-//                return
-//        }
-//        
-//        startTextField.text = "\(Int(startValue))"
-//        endTextField.text   = "\(Int(endValue))"
-//        
-//    }
+    @IBAction func sliderValueChanged(_ sender: MultiSlider) {
+        
+        guard
+            let startValue = sender.value.first,
+            let endValue   = sender.value.last
+            else {
+                dump(sender.value)
+                return
+        }
+        
+        // model update
+        backing.start = Int(startValue)
+        backing.end   = Int(endValue)
+        
+        // view update
+        startTextField.text = "\(backing.start)"
+        endTextField.text   = "\(backing.end)"
+        
+        // delegate update
+        delegate?.didUpdateRange(self, range: backing.range())
+   
+    }
 }
 
 
