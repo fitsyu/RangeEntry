@@ -1,9 +1,9 @@
 import UIKit
-
 import MultiSlider
 
 public class RangeEntryViewDefault: UIView, RangeEntryView {
     
+    // MARK: Public setables
     public var startValueDisplayName: String = "from" {
         didSet { setupLabels() }
     }
@@ -11,20 +11,16 @@ public class RangeEntryViewDefault: UIView, RangeEntryView {
         didSet { setupLabels() }
     }
     
-    
     public var backing: RangeEntry = RangeEntry() {
         didSet {
             setupSlider()
-            startTextField.text = String(backing.start)
-            endTextField.text = String(backing.end)
+            startTextField.text = format(backing.start)
+            endTextField.text   = format(backing.end)
         }
     }
-    
     public var delegate: RangeEntryViewDelegate?
     
     // MARK: Construction
-    private var view: UIView!
-    
     public override func awakeFromNib() {
         let nib = bundle.loadNibNamed("RangeEntryViewDefault", owner: self, options: nil)
         
@@ -57,24 +53,59 @@ public class RangeEntryViewDefault: UIView, RangeEntryView {
         return size
     }
     
-    // MARK: What we care
+    // MARK: Outlets
     @IBOutlet weak var startlabel: UILabel!
     @IBOutlet weak var startTextField: UITextField!
     
     @IBOutlet weak var endLabel: UILabel!
     @IBOutlet weak var endTextField: UITextField!
     
+    @IBOutlet weak var slider: MultiSlider!
+    
+    @IBAction func sliderValueChanged(_ sender: MultiSlider) {
+        
+        guard
+            let startValue = sender.value.first,
+            let endValue   = sender.value.last
+            else {
+                dump(sender.value)
+                return
+        }
+        
+        // model update
+        backing.start = Int(startValue)
+        backing.end   = Int(endValue)
+        
+        // view update
+        startTextField.text = format(backing.start)
+        endTextField.text   = format(backing.end)
+        
+        // delegate update
+        delegate?.didUpdateRange(self, range: backing.range())
+    }
+    
+    // MARK: Private Properties
+    private var view: UIView!
+    private var activeTextField: UITextField?
+    private var formatter: NumberFormatter {
+        let fmt = NumberFormatter()
+        fmt.groupingSize = 3
+        fmt.groupingSeparator = "."
+        fmt.usesGroupingSeparator = true
+        return fmt
+    }
+}
+
+// MARK: Setups
+extension RangeEntryViewDefault {
+    
     private func setupLabels() {
         startlabel.text = startValueDisplayName
         endLabel.text   = endValueDisplayName
     }
     
-    @IBOutlet weak var slider: MultiSlider!
-    
-    private var activeTextField: UITextField?
-    
-    func setupTextFields() {
-
+    private func setupTextFields() {
+        
         let width  = view.frame.width
         let height = CGFloat(40.0)
         let frame  = CGRect(x: 0, y: 0, width: width, height: height)
@@ -93,43 +124,20 @@ public class RangeEntryViewDefault: UIView, RangeEntryView {
         }
     }
     
-    func setupSlider() {
+    private func setupSlider() {
         slider.orientation = .horizontal
-
-        print(backing.start, backing.end)
+        
         let start = CGFloat(backing.start)
         let end   = CGFloat(backing.end)
-
+        
         slider.minimumValue = start
         slider.maximumValue = end
         slider.value       = [start, end]
     }
     
-    @IBAction func sliderValueChanged(_ sender: MultiSlider) {
-        
-        guard
-            let startValue = sender.value.first,
-            let endValue   = sender.value.last
-            else {
-                dump(sender.value)
-                return
-        }
-        
-        // model update
-        backing.start = Int(startValue)
-        backing.end   = Int(endValue)
-        
-        // view update
-        startTextField.text = "\(backing.start)"
-        endTextField.text   = "\(backing.end)"
-        
-        // delegate update
-        delegate?.didUpdateRange(self, range: backing.range())
-   
-    }
 }
 
-
+// MARK: TextField Delegate
 extension RangeEntryViewDefault: UITextFieldDelegate {
     
     @objc func closeTextField() {
@@ -145,6 +153,8 @@ extension RangeEntryViewDefault: UITextFieldDelegate {
             print ("value couldn't be converted to int")
             return
         }
+        
+        activeTextField?.text = format(value)
 
         switch textField {
         case startTextField:
@@ -171,5 +181,14 @@ extension RangeEntryViewDefault: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         closeTextField()
         return true
+    }
+}
+
+// MARK: Helpers
+extension RangeEntryViewDefault {
+    
+    private func format(_ value: Int) -> String? {
+        let text = formatter.string(from: NSNumber(value: value))
+        return text
     }
 }
