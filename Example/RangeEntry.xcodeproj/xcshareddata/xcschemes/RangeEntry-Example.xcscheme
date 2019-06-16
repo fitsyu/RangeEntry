@@ -52,6 +52,16 @@
                ReferencedContainer = "container:RangeEntry.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E8CBDFFE22B6914E00CBC73B"
+               BuildableName = "RangeEntry_ExampleUITests.xctest"
+               BlueprintName = "RangeEntry_ExampleUITests"
+               ReferencedContainer = "container:RangeEntry.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
