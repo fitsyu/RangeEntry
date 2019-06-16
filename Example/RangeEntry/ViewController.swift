@@ -43,7 +43,7 @@ extension ViewController: RangeEntryViewDelegate {
     
     func didUpdateRange(_ view: RangeEntryView, range: RangeEntry.Range) {
         
-        let text = "min:\(range.start) max: \(range.end)"
+        let text = "min:\(range.start) max:\(range.end)"
         priceRangeLabel.text = text
     }
 }
