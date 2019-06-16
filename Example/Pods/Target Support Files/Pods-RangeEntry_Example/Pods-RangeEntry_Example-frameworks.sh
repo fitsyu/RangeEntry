@@ -161,9 +161,15 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AvailableHapticFeedback/AvailableHapticFeedback.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MiniLayout/MiniLayout.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MultiSlider/MultiSlider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RangeEntry/RangeEntry.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/AvailableHapticFeedback/AvailableHapticFeedback.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MiniLayout/MiniLayout.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MultiSlider/MultiSlider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RangeEntry/RangeEntry.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

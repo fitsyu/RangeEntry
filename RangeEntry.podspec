@@ -28,15 +28,16 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/fitsyu/RangeEntry.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'RangeEntry/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'RangeEntry' => ['RangeEntry/Assets/*.png']
-  # }
+  s.resource_bundles = {
+     'RangeEntry' => ['RangeEntry/Assets/*.xib']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'MultiSlider'
+  
 end

@@ -2,6 +2,8 @@ use_frameworks!
 
 target 'RangeEntry_Example' do
   pod 'RangeEntry', :path => '../'
+  
+  pod 'MultiSlider'
 
   target 'RangeEntry_Tests' do
     inherit! :search_paths

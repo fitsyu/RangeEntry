@@ -16,7 +16,17 @@
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
-  "source_files": "RangeEntry/Classes/**/*"
+  "source_files": "RangeEntry/Classes/**/*",
+  "resource_bundles": {
+    "RangeEntry": [
+      "RangeEntry/Assets/*.xib"
+    ]
+  },
+  "dependencies": {
+    "MultiSlider": [
+
+    ]
+  }
 }

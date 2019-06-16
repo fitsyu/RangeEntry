@@ -1,16 +1,32 @@
 PODS:
-  - RangeEntry (0.1.0)
+  - AvailableHapticFeedback (1.0.0)
+  - MiniLayout (1.4.1)
+  - MultiSlider (1.9.3):
+    - AvailableHapticFeedback
+    - MiniLayout
+  - RangeEntry (0.1.0):
+    - MultiSlider
 
 DEPENDENCIES:
+  - MultiSlider
   - RangeEntry (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AvailableHapticFeedback
+    - MiniLayout
+    - MultiSlider
 
 EXTERNAL SOURCES:
   RangeEntry:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RangeEntry: 05d16571cc3a523663eb51edc71179b85c12df6f
+  AvailableHapticFeedback: dbd483684e693281b85e671d95ac3593dfbad34f
+  MiniLayout: bd42e3763700c3002f39ff3b36dc8a027ea5078a
+  MultiSlider: 833e67dce51206bf93e43b3cab7b334a6f6430c8
+  RangeEntry: cfb130ecabf6557bf6cb8078837aa885e75b2c91
 
-PODFILE CHECKSUM: 4e7f2526b0fae6ba39adc5b65e68ac330fb7dc0e
+PODFILE CHECKSUM: 0775d12c9cd4c4a0ef3883a40e2fd2640eea0fb9
 
 COCOAPODS: 1.7.1

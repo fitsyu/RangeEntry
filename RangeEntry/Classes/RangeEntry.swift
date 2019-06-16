@@ -61,7 +61,7 @@ public class RangeEntry {
         
         // the anti-pattern
         if end < start {
-            end = start
+            start = end
         }
     }
 }

@@ -12,7 +12,7 @@ import RangeEntry
 class ViewController: UIViewController {
 
     @IBOutlet weak var priceRangeLabel: UILabel!
-    @IBOutlet weak var priceRangeEntryViewContainer: UIView!
+    @IBOutlet weak var priceRangeView: RangeEntryViewDefault!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +25,17 @@ extension ViewController {
     
     func makeRangeEntry() {
         
-        let prange = RangeEntry(start: 200, end: 40_000)
+        let prange = RangeEntry(start: 10, end: 100)
         
-        let prangeView = RangeEntryViewDefault()
-        prangeView.frame = priceRangeEntryViewContainer.bounds
-        priceRangeEntryViewContainer.addSubview(prangeView)
+//        let prangeView = RangeEntryViewDefault()
+//        prangeView.frame = priceRangeEntryViewContainer.bounds
+//        priceRangeEntryViewContainer.addSubview(prangeView)
         
-        prangeView.backing = prange
-        prangeView.delegate = self
+        priceRangeView.startValueDisplayName = "Minimum"
+        priceRangeView.endValueDisplayName   = "Maximum"
+        
+        priceRangeView.backing = prange
+        priceRangeView.delegate = self
     }
 }
 
