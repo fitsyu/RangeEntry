@@ -150,3 +150,42 @@ class RangeEntry_ExampleUITests: XCTestCase {
         XCTAssertTrue(exists, "when maximum is set below minimum, minimum is set equal to maximum")
     }
 }
+
+import Quick
+import Nimble
+
+class RangeEntrySpec: QuickSpec {
+    
+    override func spec() {
+        
+        describe("given min = 10 and max = 40.000.000") {
+            
+            let app = XCUIApplication()
+            
+            context("when minimum or maximum is updated") {
+                
+                let element = app.buttons["DoubleThumbSlider"].children(matching: .other).element(boundBy: 0)
+                element.swipeLeft()
+                
+                element.adjust(toNormalizedSliderPosition: 0.25)
+                
+                let minimumTextField = app.textFields["startValue"]
+
+                // open keyboard
+                minimumTextField.tap()
+
+                // change the existing "10" to "1.000"
+                let zeroKey = app.keys["0"]
+                zeroKey.tap() // 10 + 0 = 100
+                zeroKey.tap() // 100 + 0 = 1000
+
+                let doneKey = app.toolbars["Toolbar"].buttons["Done"]
+                doneKey.tap()
+                
+                it("then slider's first thumb is pushed back") {
+                    
+                }
+            }
+        }
+    }
+}

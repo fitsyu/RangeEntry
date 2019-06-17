@@ -50,6 +50,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eId-hu-39H" customClass="MultiSlider" customModule="MultiSlider">
                     <rect key="frame" x="16" y="72" width="252" height="32"/>
                     <color key="tintColor" red="0.41832735090000001" green="0.72227169690000004" blue="0.54210833530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <accessibility key="accessibilityConfiguration" identifier="DoubleThumbSlider">
+                        <accessibilityTraits key="traits" button="YES"/>
+                        <bool key="isElement" value="NO"/>
+                    </accessibility>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="93T-aM-WT8"/>
                     </constraints>

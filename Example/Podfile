@@ -4,12 +4,18 @@ target 'RangeEntry_Example' do
   pod 'RangeEntry', :path => '../'
   
   pod 'MultiSlider'
-
+  
   target 'RangeEntry_Tests' do
     inherit! :search_paths
-
+  end
+  
+  target 'RangeEntry_ExampleUITests' do
+    inherit! :search_paths
+    
+    pod 'RangeEntry', :path => '../'
+    pod 'MultiSlider'
     pod 'Nimble'
     pod 'Quick'
-    
   end
+  
 end
