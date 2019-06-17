@@ -8,6 +8,8 @@ target 'RangeEntry_Example' do
   target 'RangeEntry_Tests' do
     inherit! :search_paths
 
+    pod 'Nimble'
+    pod 'Quick'
     
   end
 end

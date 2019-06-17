@@ -4,11 +4,15 @@ PODS:
   - MultiSlider (1.9.3):
     - AvailableHapticFeedback
     - MiniLayout
+  - Nimble (8.0.2)
+  - Quick (2.1.0)
   - RangeEntry (0.1.0):
     - MultiSlider
 
 DEPENDENCIES:
   - MultiSlider
+  - Nimble
+  - Quick
   - RangeEntry (from `../`)
 
 SPEC REPOS:
@@ -16,6 +20,8 @@ SPEC REPOS:
     - AvailableHapticFeedback
     - MiniLayout
     - MultiSlider
+    - Nimble
+    - Quick
 
 EXTERNAL SOURCES:
   RangeEntry:
@@ -25,8 +31,10 @@ SPEC CHECKSUMS:
   AvailableHapticFeedback: dbd483684e693281b85e671d95ac3593dfbad34f
   MiniLayout: bd42e3763700c3002f39ff3b36dc8a027ea5078a
   MultiSlider: 833e67dce51206bf93e43b3cab7b334a6f6430c8
+  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
   RangeEntry: cfb130ecabf6557bf6cb8078837aa885e75b2c91
 
-PODFILE CHECKSUM: 0775d12c9cd4c4a0ef3883a40e2fd2640eea0fb9
+PODFILE CHECKSUM: 2a866b9a3f7518ed35a6c2760cf6f1e713fa1702
 
 COCOAPODS: 1.7.1
