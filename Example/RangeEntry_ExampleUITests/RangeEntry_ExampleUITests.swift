@@ -58,7 +58,6 @@ class RangeEntry_ExampleUITests: XCTestCase {
         XCTAssertTrue(exists, "when minimum is set to 1000, it is reflected on the label")
     }
     
-    
     func testMaximumCanBeSet() {
         
         let app = XCUIApplication()
@@ -94,4 +93,60 @@ class RangeEntry_ExampleUITests: XCTestCase {
         XCTAssertTrue(exists, "when maximum is set to 1000, it is reflected on the label")
     }
 
+    func test_when_minimum_set_ABOVE_maximum_maximum_is_set_equal_to_minimum() {
+        
+        let app = XCUIApplication()
+        
+        // get the minimum textField
+        let minimumTextField = app.textFields["startValue"]
+        
+        // edit it by opening the input keyboard
+        minimumTextField.tap()
+        
+        // clear one char (assume there is value of "10")
+        let deleteKey = app/*@START_MENU_TOKEN@*/.keys["Delete"]/*[[".keyboards.keys[\"Delete\"]",".keys[\"Delete\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        deleteKey.tap()
+        deleteKey.tap()
+        
+        // set it to 40_000_001 (+1 more)
+        let fortyMillionAndOne = "40000001"
+        fortyMillionAndOne.forEach { app.keys["\($0)"].tap() }
+        
+        // close the input
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        
+        // verify
+        let priceRangeLabel = app.staticTexts["min:40000001 max:40000001"]
+        let exists = priceRangeLabel.waitForExistence(timeout: 1)
+        
+        XCTAssertTrue(exists, "when minimum is set above maximum, maximum is set equal to minimum")
+    }
+    
+    func test_when_maximum_set_BELOW_minimum_minimum_is_set_equal_to_maximum() {
+        
+        let app = XCUIApplication()
+        
+        // get the minimum textField
+        let maximumTextField = app.textFields["endValue"]
+        
+        // edit it by opening the input keyboard
+        maximumTextField.tap()
+        
+        // clear (assume there is value of "40.000.000")
+        let deleteKey = app/*@START_MENU_TOKEN@*/.keys["Delete"]/*[[".keyboards.keys[\"Delete\"]",".keys[\"Delete\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        let fortyMillionChars = "40.000.000"
+        fortyMillionChars.forEach { _ in deleteKey.tap() }
+        
+        // set it to 5 (it is less than 10)
+        app.keys["5"].tap()
+        
+        // close the input
+        app.toolbars["Toolbar"].buttons["Done"].tap()
+        
+        // verify
+        let priceRangeLabel = app.staticTexts["min:5 max:5"]
+        let exists = priceRangeLabel.waitForExistence(timeout: 1)
+        
+        XCTAssertTrue(exists, "when maximum is set below minimum, minimum is set equal to maximum")
+    }
 }
