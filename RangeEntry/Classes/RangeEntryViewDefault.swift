@@ -107,7 +107,7 @@ extension RangeEntryViewDefault {
     private func setupTextFields() {
         
         let width  = view.frame.width
-        let height = CGFloat(40.0)
+        let height = CGFloat(50.0)
         let frame  = CGRect(x: 0, y: 0, width: width, height: height)
         let toolbar = UIToolbar(frame: frame)
         
